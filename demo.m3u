@@ -19,11 +19,11 @@ https://live-20minutestv.digiteka.com/1961167769/index.m3u8
 https://ncdn-live-bfm.pfd.sfr.net/shls/LIVE$BFM_LYON/index.m3u8?end=END&start=LIVE
 #EXTINF:-1 tvg-id="BFMMarseille.fr@SD" tvg-logo="https://i.imgur.com/h7t0l6q.png" group-title="Régions",BFM Marseille
 https://ncdn-live-bfm.pfd.sfr.net/shls/LIVE$BFM_MARSEILLEPROV/index.m3u8?end=END&start=LIVE
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Sintel_poster.jpg/500px-Sintel_poster.jpg" group-title="Films libres (Blender)",Sintel (2010)
+#EXTINF:-1 tvg-logo="https://triomphekou73.github.io/zonetv/demo/sintel.jpg" group-title="Films libres (Blender)",Sintel (2010)
 https://download.blender.org/demo/movies/Sintel.2010.1080p.mkv
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Tos-poster.png/500px-Tos-poster.png" group-title="Films libres (Blender)",Tears of Steel (2012)
+#EXTINF:-1 tvg-logo="https://triomphekou73.github.io/zonetv/demo/tears-of-steel.png" group-title="Films libres (Blender)",Tears of Steel (2012)
 https://download.blender.org/demo/movies/ToS/tears_of_steel_720p.mov
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Big_buck_bunny_poster_big.jpg/500px-Big_buck_bunny_poster_big.jpg" group-title="Films libres (Blender)",Big Buck Bunny (2008)
+#EXTINF:-1 tvg-logo="https://triomphekou73.github.io/zonetv/demo/big-buck-bunny.jpg" group-title="Films libres (Blender)",Big Buck Bunny (2008)
 https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/ElephantsDreamPoster.jpg/500px-ElephantsDreamPoster.jpg" group-title="Films libres (Blender)",Elephants Dream (2006)
+#EXTINF:-1 tvg-logo="https://triomphekou73.github.io/zonetv/demo/elephants-dream.jpg" group-title="Films libres (Blender)",Elephants Dream (2006)
 https://download.blender.org/ED/ED_1024.avi
