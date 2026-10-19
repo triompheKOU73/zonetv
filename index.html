@@ -55,6 +55,7 @@
       <a href="#fonctionnalites">Fonctionnalités</a>
       <a href="#captures">Captures</a>
       <a href="#demarrer">Comment ça marche</a>
+      <a href="#connexion">Se connecter</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
       <a class="btn btn-small" href="https://apps.microsoft.com/detail/9PJPSWMTRBG6?mode=direct">Télécharger</a>
@@ -180,7 +181,7 @@
         <li>
           <span class="num">2</span>
           <h3>Ajoute ton service</h3>
-          <p>Saisis ton compte Xtream Codes ou l'adresse de ta liste M3U. Tes identifiants restent sur ton PC.</p>
+          <p>Saisis ton compte Xtream Codes ou l'adresse de ta liste M3U (<a href="#connexion">voir comment</a>). Tes identifiants restent sur ton PC.</p>
         </li>
         <li>
           <span class="num">3</span>
@@ -188,6 +189,54 @@
           <p>Le catalogue se range tout seul en zones. Choisis, lance, profite.</p>
         </li>
       </ol>
+    </div>
+  </section>
+
+  <!-- Se connecter -->
+  <section id="connexion" class="section section-alt">
+    <div class="wrap">
+      <p class="kicker">Se connecter</p>
+      <h2>Ajouter ton compte, pas à pas</h2>
+      <p class="intro">Au premier lancement, ZONEtv ouvre l'écran « Ajouter un compte ». Tu peux en ajouter d'autres à tout moment dans <strong>Paramètres &gt; Comptes &gt; Ajouter</strong>. Choisis le type qui correspond aux informations reçues de ton fournisseur.</p>
+      <div class="tabs" role="tablist" aria-label="Type de compte">
+        <button role="tab" aria-selected="true" aria-controls="cx-xtream" id="t-xtream">Compte Xtream Codes</button>
+        <button role="tab" aria-selected="false" aria-controls="cx-m3u" id="t-m3u">Liste M3U</button>
+      </div>
+
+      <div class="connect" id="cx-xtream" role="tabpanel" aria-labelledby="t-xtream">
+        <div class="window connect-shot">
+          <div class="window-bar"><i></i><i></i><i></i></div>
+          <img src="img/connexion-xtream.webp" srcset="img/connexion-xtream-mini.webp 720w, img/connexion-xtream.webp 1040w" sizes="(max-width: 900px) 92vw, 520px" alt="Écran Ajouter un compte de ZONEtv, onglet Xtream Codes, rempli avec des valeurs d'exemple" width="1040" height="900" loading="lazy">
+        </div>
+        <ol class="fields">
+          <li><b>Xtream Codes</b> : sélectionne cet onglet en haut.</li>
+          <li><b>Nom du compte</b> : le nom de ton choix, par exemple « Mon abonnement ».</li>
+          <li><b>Adresse du serveur (DNS)</b> : l'adresse donnée par ton fournisseur, avec le port, par exemple <code>http://exemple.com:8080</code>.</li>
+          <li><b>Serveur de secours</b> (facultatif) : une deuxième adresse, utilisée si la première ne répond pas.</li>
+          <li><b>Identifiant (username)</b> et <b>Mot de passe</b> : ceux de ton abonnement. L'œil permet d'afficher le mot de passe pour le vérifier.</li>
+          <li><b>Tester la connexion</b> pour vérifier, puis <b>Enregistrer</b>. Le catalogue se télécharge et se range tout seul.</li>
+        </ol>
+      </div>
+
+      <div class="connect" id="cx-m3u" role="tabpanel" aria-labelledby="t-m3u" hidden>
+        <div class="window connect-shot">
+          <div class="window-bar"><i></i><i></i><i></i></div>
+          <img src="img/connexion-m3u.webp" srcset="img/connexion-m3u-mini.webp 720w, img/connexion-m3u.webp 1040w" sizes="(max-width: 900px) 92vw, 520px" alt="Écran Ajouter un compte de ZONEtv, onglet Liste M3U, rempli avec des valeurs d'exemple" width="1040" height="610" loading="lazy">
+        </div>
+        <ol class="fields">
+          <li><b>Liste M3U</b> : sélectionne cet onglet en haut.</li>
+          <li><b>Nom du compte</b> : le nom de ton choix, par exemple « Ma liste ».</li>
+          <li><b>Adresse de la liste M3U</b> : le lien fourni par ton service, qui finit en général par <code>.m3u</code> ou <code>.m3u8</code>.</li>
+          <li><b>Tester la connexion</b> pour vérifier, puis <b>Enregistrer</b>.</li>
+        </ol>
+      </div>
+
+      <p class="note">Les valeurs affichées sont des exemples. Tes identifiants restent sur ton ordinateur, chiffrés par Windows.</p>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
       <div class="warning">
         <strong>Important :</strong> ZONEtv est un lecteur. Il ne fournit, ne vend et ne recommande aucun contenu ni aucun abonnement. Tu dois disposer d'un service IPTV légal, que tu configures toi-même.
       </div>
@@ -265,7 +314,16 @@
 
 <script>
   (function () {
-    var tabs = document.querySelectorAll('.tabs button');
+    var tabs = document.querySelectorAll('#captures .tabs button');
+    var cx = document.querySelectorAll('#connexion .tabs button');
+    cx.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        cx.forEach(function (t) {
+          t.setAttribute('aria-selected', String(t === tab));
+          document.getElementById(t.getAttribute('aria-controls')).hidden = t !== tab;
+        });
+      });
+    });
     var shot = document.getElementById('shot');
     var legend = document.getElementById('legend');
     var box = document.getElementById('lightbox');
